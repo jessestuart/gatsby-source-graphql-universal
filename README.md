@@ -4,10 +4,9 @@
 
 ## How to use
 
-The plugin provides higher order component as well as direct manipulation tools for custom operations
+The plugin provides higher order component as well as direct manipulation tools for custom operations.
 
-[See TypeScript definitions for more details](https://github.com/birkir/gatsby-source-graphql-universal/blob/master/index.d.ts)
-
+[See TypeScript definitions for more details][github].
 
 ### Higher-Order Component
 
@@ -59,7 +58,6 @@ export const Demo = withGraphql(
    - **`options.composeData`**: _(default: true)_  will overwrite component gatsby data with composed data from the browser when true
    - **`...options`** optional parameters to pass to `ApolloClient.query` (sets fetchPolicy to 'network-only' by default)
 
-
 ### getIsolatedQuery
 
 The following code will now result in an object that has the original graphql query source accessible where you are free to do anything with it.
@@ -109,20 +107,17 @@ const onlySwapi = getIsolatedQuery(query, 'swapi', 'SWAPI');
 // }
 ```
 
-
-
 ---
 
 ---
 
 ### gatsby-source-graphql (previous documentation)
 
-Plugin for connecting arbitrary GraphQL APIs to Gatsby GraphQL. Remote schemas are stitched together by adding a type that wraps the remote schema 
+Plugin for connecting arbitrary GraphQL APIs to Gatsby GraphQL. Remote schemas are stitched together by adding a type that wraps the remote schema
 Query type and putting it under field of Gatsby GraphQL Query.
 
-- [Example website](https://using-gatsby-source-graphql.netlify.com/)
-- [Example website source](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-gatsby-source-graphql)
-
+- [Example website][netlify]
+- [Example website source][github 2]
 
 ## Install
 
@@ -130,8 +125,8 @@ Query type and putting it under field of Gatsby GraphQL Query.
 
 ## How to use
 
-First, you need a way to pass environment variables to the build process, so secrets and other secured data aren't committed to source control. We 
-recommend using [`dotenv`][dotenv] which will then expose environment variables. [Read more about dotenv and using environment variables 
+First, you need a way to pass environment variables to the build process, so secrets and other secured data aren't committed to source control. We
+recommend using [`dotenv`][dotenv] which will then expose environment variables. [Read more about dotenv and using environment variables
 here][envvars]. Then we can _use_ these environment variables and configure our plugin.
 
 ```javascript
@@ -208,12 +203,12 @@ module.exports = {
 
 ## Schema definitions
 
-By default schema is introspected from the remote schema. Schema is cached in `.cache` in this case and refreshing the schema requires deleting the 
+By default schema is introspected from the remote schema. Schema is cached in `.cache` in this case and refreshing the schema requires deleting the
 cache.
 
-To control schema consumption, you can alternatively construct schema definition by passing `createSchema` callback. This way you could, for 
-example, read schema SDL or introspection JSON. When `createSchema` callback is used, schema isn't cached. `createSchema` can return a Promise to 
-GraphQLSchema instance or GraphQLSchema instance.
+To control schema consumption, you can alternatively construct schema definition by passing `createSchema` callback. This way you could, for
+example, read schema SDL or introspection JSON. When `createSchema` callback is used, schema isn't cached. `createSchema` can return a Promise to
+`GraphQLSchema` instance or `GraphQLSchema` instance.
 
 ```js
 const fs = require("fs")
@@ -255,7 +250,7 @@ module.exports = {
 
 # Refetching data
 
-By default, `gatsby-source-graphql-universal` will only refetch the data once the server is restarted. It's also possible to configure the plugin to 
+By default, `gatsby-source-graphql-universal` will only refetch the data once the server is restarted. It's also possible to configure the plugin to
 periodically refetch the data. The option is called `refetchInterval` and specifies the timeout in seconds.
 
 ```js
@@ -282,4 +277,6 @@ module.exports = {
 
 [dotenv]: https://github.com/motdotla/dotenv
 [envvars]: https://gatsby.app/env-vars
-
+[github]: https://github.com/birkir/gatsby-source-graphql-universal/blob/master/index.d.ts
+[github 2]: https://github.com/gatsbyjs/gatsby/tree/master/examples/using-gatsby-source-graphql
+[netlify]: https://using-gatsby-source-graphql.netlify.com/
