@@ -6,7 +6,7 @@
 
 The plugin provides higher order component as well as direct manipulation tools for custom operations
 
-[See TypeScript definitions for more details](/index.d.ts)
+[See TypeScript definitions for more details](https://github.com/birkir/gatsby-source-graphql-universal/blob/master/index.d.ts)
 
 
 ### Higher-Order Component
